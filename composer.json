@@ -1,0 +1,11 @@
+{
+    "name": "valeraseregin/brain-games-php",
+    "description": "php study project",
+    "authors": [
+        {
+            "name": "Valeriy Seregin",
+            "email": "valera-s-38@mail.ru"
+        }
+    ],
+    "require": {}
+}
