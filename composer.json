@@ -1,11 +1,22 @@
 {
     "name": "valeraseregin/brain-games-php",
+    "type": "library",
     "description": "php study project",
+    "bin": [
+        "bin/brain-games"
+    ],
     "authors": [
         {
             "name": "Valeriy Seregin",
             "email": "valera-s-38@mail.ru"
         }
     ],
-    "require": {}
+    "autoload": {
+        "files": [
+            "src/Cli.php"
+        ]
+    },
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.11"
+    }
 }
