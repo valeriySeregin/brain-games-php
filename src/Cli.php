@@ -2,12 +2,9 @@
 
 namespace Php\Brain\Games\Cli;
 
-use function cli\line;
-use function cli\prompt;
+use function Php\Brain\Games\Even\getIsEvenGame;
 
 function run()
 {
-    line('Welcome to the Brain Games!');
-    $userName = prompt('May I have your name?');
-    line("Hello, %s!", $userName);
+    return getIsEvenGame();
 }
