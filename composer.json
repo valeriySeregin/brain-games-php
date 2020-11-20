@@ -3,7 +3,9 @@
     "type": "library",
     "description": "php study project",
     "bin": [
-        "bin/brain-games"
+        "bin/brain-games",
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "authors": [
         {
@@ -20,6 +22,7 @@
         ]
     },
     "require": {
+        "php": ">=7.4",
         "wp-cli/php-cli-tools": "^0.11.11"
     },
     "require-dev": {
