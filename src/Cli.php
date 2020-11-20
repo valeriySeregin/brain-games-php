@@ -1,8 +1,8 @@
 <?php
 
-namespace Php\Brain\Games\Cli;
+namespace BrainGames\Cli;
 
-use function Php\Brain\Games\Even\getIsEvenGame;
+use function BrainGames\Even\getIsEvenGame;
 
 function run()
 {
