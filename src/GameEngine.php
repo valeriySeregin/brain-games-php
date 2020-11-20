@@ -35,10 +35,10 @@ function getCorrectAnswer($title)
     return $answers[$title];
 }
 
-function startGame($roundsCount = 3)
+function startGame($gameTitle = null, $roundsCount = 3)
 {
     line('Welcome to the Brain Games!');
-    $title = prompt('What game do you want to play?');
+    $title = $gameTitle ?? prompt('What game do you want to play?', false, ' ');
 
     getGameRules($title)();
     $playerName = prompt('May I have your name?', false, ' ');
