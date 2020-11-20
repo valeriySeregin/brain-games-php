@@ -2,9 +2,16 @@
 
 namespace BrainGames\Cli;
 
-use function BrainGames\Even\getIsEvenGame;
+use function BrainGames\GameEngine\startGame;
+use function BrainGames\Games\EvenGame\{getGameRules, getQuestion, getCorrectAnswer};
 
 function run()
 {
-    return getIsEvenGame();
+    $gameData = [
+        'gameRules' => fn() => getGameRules(),
+        'question' => fn() => getQuestion(),
+        'correctAnswer' => fn($question) => getCorrectAnswer($question)
+    ];
+
+    return startGame($gameData);
 }

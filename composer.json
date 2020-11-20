@@ -14,7 +14,8 @@
     "autoload": {
         "files": [
             "src/Cli.php",
-            "src/Even.php"
+            "src/GameEngine.php",
+            "src/games/EvenGame.php"
         ]
     },
     "require": {
