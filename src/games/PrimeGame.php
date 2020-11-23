@@ -4,8 +4,6 @@ namespace BrainGames\Games\PrimeGame;
 
 use function cli\line;
 
-const PROGRESSION_LENGTH = 9;
-
 function getGameRules()
 {
     return line('Answer \'yes\' if given number is prime. Otherwise answer \'no\'' . PHP_EOL);
