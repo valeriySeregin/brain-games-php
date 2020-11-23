@@ -40,5 +40,5 @@ function getGameName($num)
         5 => 'progress'
     ];
 
-    return $gameNames[$num];
+    return $gameNames[$num - 1];
 }
