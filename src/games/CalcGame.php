@@ -30,21 +30,15 @@ function getGameRules()
     return line('What is the result of the expression?' . PHP_EOL);
 }
 
-function getQuestion()
+function generateQuestionAndAnswer()
 {
     $firstOperand = rand(0, 10);
     $secondOperand = rand(0, 10);
     $operator = getRandomOperator();
 
-    $expression = "{$firstOperand} {$operator} {$secondOperand}";
+    $question = "{$firstOperand} {$operator} {$secondOperand}";
+    $answer = calculateExpressionResult($firstOperand, $operator, $secondOperand);
+    ;
 
-    return $expression;
-}
-
-function getCorrectAnswer($expression)
-{
-    [$firstOperand, $operator, $secondOperand] = explode(' ', $expression);
-    $correctAnswer = calculateExpressionResult($firstOperand, $operator, $secondOperand);
-
-    return (string)$correctAnswer;
+    return [$question, (string) $answer];
 }

@@ -14,12 +14,10 @@ function getGameRules()
     return line('Answer \'yes\' if given number is even and \'no\' otherwise' . PHP_EOL);
 }
 
-function getQuestion()
+function generateQuestionAndAnswer()
 {
-    return rand(0, 1000);
-}
+    $question = rand(0, 1000);
+    $answer = isEven($question) ? 'yes' : 'no';
 
-function getCorrectAnswer($num)
-{
-    return isEven($num) ? 'yes' : 'no';
+    return [$question, $answer];
 }

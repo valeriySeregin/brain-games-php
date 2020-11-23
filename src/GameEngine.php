@@ -19,28 +19,16 @@ function getGameRules($title)
     return $rules[$title];
 }
 
-function getQuestion($title)
+function getQuestionAndAnswer($title)
 {
-    $questions = [
-        'even' => fn() => \BrainGames\Games\EvenGame\getQuestion(),
-        'calc' => fn() => \BrainGames\Games\CalcGame\getQuestion(),
-        'gcd' => fn() => \BrainGames\Games\GcdGame\getQuestion(),
-        'progress' => fn() => \BrainGames\Games\ProgressGame\getQuestion()
+    $questionsAndAnswers = [
+        'even' => fn() => \BrainGames\Games\EvenGame\generateQuestionAndAnswer(),
+        'calc' => fn() => \BrainGames\Games\CalcGame\generateQuestionAndAnswer(),
+        'gcd' => fn() => \BrainGames\Games\GcdGame\generateQuestionAndAnswer(),
+        'progress' => fn() => \BrainGames\Games\ProgressGame\generateQuestionAndAnswer()
     ];
 
-    return $questions[$title];
-}
-
-function getCorrectAnswer($title)
-{
-    $answers = [
-        'even' => fn($question) => \BrainGames\Games\EvenGame\getCorrectAnswer($question),
-        'calc' => fn($question) => \BrainGames\Games\CalcGame\getCorrectAnswer($question),
-        'gcd' => fn($question) => \BrainGames\Games\GcdGame\getCorrectAnswer($question),
-        'progress' => fn($question) => \BrainGames\Games\ProgressGame\getCorrectAnswer($question)
-    ];
-
-    return $answers[$title];
+    return $questionsAndAnswers[$title];
 }
 
 function startGame($gameTitle = null)
@@ -55,17 +43,16 @@ function startGame($gameTitle = null)
     $rounds = 0;
 
     while ($rounds < GAME_ROUNDS_COUNT) {
-        $question = getQuestion($title)();
+        [$question, $answer] = getQuestionAndAnswer($title)();
         line("Question: {$question}");
 
         $userAnswer = prompt('Your answer');
-        $correctAnswer = getCorrectAnswer($title)($question);
 
-        if ($userAnswer === $correctAnswer) {
+        if ($userAnswer === $answer) {
             line('Correct!');
             $rounds += 1;
         } else {
-            line("'{$userAnswer}' is wrong answer. Correct answer was '{$correctAnswer}'.");
+            line("'{$userAnswer}' is wrong answer. Correct answer was '{$answer}'.");
             line('Let\'s try again, %s!', $playerName);
             return;
         }

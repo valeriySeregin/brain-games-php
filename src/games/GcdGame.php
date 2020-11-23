@@ -14,18 +14,13 @@ function getGameRules()
     return line('Find the greates common divisor of given numbers' . PHP_EOL);
 }
 
-function getQuestion()
+function generateQuestionAndAnswer()
 {
     $firstNumber = rand(1, 100);
     $secondNumber = rand(1, 100);
 
-    return "{$firstNumber} {$secondNumber}";
-}
+    $question = "{$firstNumber} {$secondNumber}";
+    $answer = calculateGcd($firstNumber, $secondNumber);
 
-function getCorrectAnswer($numbers)
-{
-    [$firstNumber, $secondNumber] = explode(' ', $numbers);
-    $correctAnswer = calculateGcd($firstNumber, $secondNumber);
-
-    return (string)$correctAnswer;
+    return [$question, (string) $answer];
 }
