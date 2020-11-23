@@ -13,7 +13,8 @@ function getGameRules($title)
         'even' => fn() => \BrainGames\Games\EvenGame\getGameRules(),
         'calc' => fn() => \BrainGames\Games\CalcGame\getGameRules(),
         'gcd' => fn() => \BrainGames\Games\GcdGame\getGameRules(),
-        'progress' => fn() => \BrainGames\Games\ProgressGame\getGameRules()
+        'progress' => fn() => \BrainGames\Games\ProgressGame\getGameRules(),
+        'prime' => fn() => \BrainGames\Games\PrimeGame\getGameRules()
     ];
 
     return $rules[$title];
@@ -25,25 +26,23 @@ function getQuestionAndAnswer($title)
         'even' => fn() => \BrainGames\Games\EvenGame\generateQuestionAndAnswer(),
         'calc' => fn() => \BrainGames\Games\CalcGame\generateQuestionAndAnswer(),
         'gcd' => fn() => \BrainGames\Games\GcdGame\generateQuestionAndAnswer(),
-        'progress' => fn() => \BrainGames\Games\ProgressGame\generateQuestionAndAnswer()
+        'progress' => fn() => \BrainGames\Games\ProgressGame\generateQuestionAndAnswer(),
+        'prime' => fn() => \BrainGames\Games\PrimeGame\generateQuestionAndAnswer()
     ];
 
     return $questionsAndAnswers[$title];
 }
 
-function startGame($gameTitle = null)
+function startGame($gameTitle)
 {
-    line('Welcome to the Brain Games!');
-    $title = $gameTitle ?? prompt('What game do you want to play?', false, ' ');
-
-    getGameRules($title)();
+    getGameRules($gameTitle)();
     $playerName = prompt('May I have your name?', false, ' ');
     line("Hello, %s!" . PHP_EOL, $playerName);
 
     $rounds = 0;
 
     while ($rounds < GAME_ROUNDS_COUNT) {
-        [$question, $answer] = getQuestionAndAnswer($title)();
+        [$question, $answer] = getQuestionAndAnswer($gameTitle)();
         line("Question: {$question}");
 
         $userAnswer = prompt('Your answer');
