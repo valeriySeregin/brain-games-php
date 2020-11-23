@@ -10,6 +10,7 @@ function getGameRules($title)
     $rules = [
         'even' => fn() => \BrainGames\Games\EvenGame\getGameRules(),
         'calc' => fn() => \BrainGames\Games\CalcGame\getGameRules(),
+        'gcd' => fn() => \BrainGames\Games\GcdGame\getGameRules()
     ];
 
     return $rules[$title];
@@ -20,6 +21,7 @@ function getQuestion($title)
     $questions = [
         'even' => fn() => \BrainGames\Games\EvenGame\getQuestion(),
         'calc' => fn() => \BrainGames\Games\CalcGame\getQuestion(),
+        'gcd' => fn() => \BrainGames\Games\GcdGame\getQuestion()
     ];
 
     return $questions[$title];
@@ -30,6 +32,7 @@ function getCorrectAnswer($title)
     $answers = [
         'even' => fn($question) => \BrainGames\Games\EvenGame\getCorrectAnswer($question),
         'calc' => fn($question) => \BrainGames\Games\CalcGame\getCorrectAnswer($question),
+        'gcd' => fn($question) => \BrainGames\Games\GcdGame\getCorrectAnswer($question)
     ];
 
     return $answers[$title];
