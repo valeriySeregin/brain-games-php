@@ -23,3 +23,9 @@ or any of next:
 `brain-gcd`
 
 `brain-prime`
+
+# Menu usage example
+[![asciicast](https://asciinema.org/a/EMdKikrqGqf4BILBepZ42TgGs.svg)](https://asciinema.org/a/EMdKikrqGqf4BILBepZ42TgGs)
+
+# Game process example
+[![asciicast](https://asciinema.org/a/tGCq0IqiAIGTsOatiP67QdRzI.svg)](https://asciinema.org/a/tGCq0IqiAIGTsOatiP67QdRzI)
