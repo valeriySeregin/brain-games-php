@@ -28,7 +28,7 @@ function calculateExpressionResult($firstOperand, $operator, $secondOperand)
         case '*':
             return $firstOperand * $secondOperand;
         default:
-            return 'Unexpected operator!';
+            throw new \Exception('Unexpected operator!');
     }
 }
 
