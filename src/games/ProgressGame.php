@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games\ProgressGame;
 
-use function cli\line;
 use function BrainGames\GameEngine\startGame;
 
 const PROGRESSION_LENGTH = 9;

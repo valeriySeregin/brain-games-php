@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games\PrimeGame;
 
-use function cli\line;
 use function BrainGames\GameEngine\startGame;
 
 const GAME_RULE = 'Answer \'yes\' if given number is prime. Otherwise answer \'no\'' . PHP_EOL;

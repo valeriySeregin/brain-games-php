@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games\GcdGame;
 
-use function cli\line;
 use function BrainGames\GameEngine\startGame;
 
 const GAME_RULE = 'Find the greates common divisor of given numbers' . PHP_EOL;

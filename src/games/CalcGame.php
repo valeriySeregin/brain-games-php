@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games\CalcGame;
 
-use function cli\line;
 use function BrainGames\GameEngine\startGame;
 
 const GAME_RULE = 'What is the result of the expression?' . PHP_EOL;

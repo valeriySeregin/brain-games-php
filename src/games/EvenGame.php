@@ -2,7 +2,6 @@
 
 namespace BrainGames\Games\EvenGame;
 
-use function cli\line;
 use function BrainGames\GameEngine\startGame;
 
 const GAME_RULE = 'Answer \'yes\' if given number is even and \'no\' otherwise' . PHP_EOL;
