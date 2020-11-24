@@ -3,15 +3,18 @@
 namespace BrainGames\Games\GcdGame;
 
 use function cli\line;
+use function BrainGames\GameEngine\startGame;
+
+const GAME_RULE = 'Find the greates common divisor of given numbers' . PHP_EOL;
+
+function start()
+{
+    return startGame(GAME_RULE, fn() => generateQuestionAndAnswer());
+}
 
 function calculateGcd($firstNum, $secondNum)
 {
     return $firstNum % $secondNum === 0 ? $secondNum : calculateGcd($secondNum, $firstNum % $secondNum);
-}
-
-function getGameRules()
-{
-    return line('Find the greates common divisor of given numbers' . PHP_EOL);
 }
 
 function generateQuestionAndAnswer()

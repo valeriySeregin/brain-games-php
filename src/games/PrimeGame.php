@@ -3,10 +3,13 @@
 namespace BrainGames\Games\PrimeGame;
 
 use function cli\line;
+use function BrainGames\GameEngine\startGame;
 
-function getGameRules()
+const GAME_RULE = 'Answer \'yes\' if given number is prime. Otherwise answer \'no\'' . PHP_EOL;
+
+function start()
 {
-    return line('Answer \'yes\' if given number is prime. Otherwise answer \'no\'' . PHP_EOL);
+    return startGame(GAME_RULE, fn() => generateQuestionAndAnswer());
 }
 
 function isPrime($num)

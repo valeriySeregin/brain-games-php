@@ -3,6 +3,14 @@
 namespace BrainGames\Games\CalcGame;
 
 use function cli\line;
+use function BrainGames\GameEngine\startGame;
+
+const GAME_RULE = 'What is the result of the expression?' . PHP_EOL;
+
+function start()
+{
+    return startGame(GAME_RULE, fn() => generateQuestionAndAnswer());
+}
 
 function getRandomOperator()
 {
@@ -23,11 +31,6 @@ function calculateExpressionResult($firstOperand, $operator, $secondOperand)
         default:
             return 'Unexpected operator!';
     }
-}
-
-function getGameRules()
-{
-    return line('What is the result of the expression?' . PHP_EOL);
 }
 
 function generateQuestionAndAnswer()

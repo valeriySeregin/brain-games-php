@@ -3,12 +3,14 @@
 namespace BrainGames\Games\ProgressGame;
 
 use function cli\line;
+use function BrainGames\GameEngine\startGame;
 
 const PROGRESSION_LENGTH = 9;
+const GAME_RULE = 'What number is missing in the progression?' . PHP_EOL;
 
-function getGameRules()
+function start()
 {
-    return line('What number is missing in the progression?' . PHP_EOL);
+    return startGame(GAME_RULE, fn() => generateQuestionAndAnswer());
 }
 
 function generateQuestionAndAnswer()
